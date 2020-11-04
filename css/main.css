@@ -1,4 +1,8 @@
 /* GLOBAL STYLES */
+html {
+  box-shadow: 0 0 0 30px #000 inset;
+  padding: 0 30px;
+}
 body {
   font-family: helvetica, arial, sans;
 }
@@ -20,6 +24,9 @@ a {
 .header {
   background-color: #000;
   color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
 }
 .header-logo {
   background-color: #000;
@@ -30,6 +37,7 @@ a {
   position: relative;
   text-align: center;
   width: 10vh;
+  left: -30px;
 }
 .header-logo:hover,
 .header-logo:active {
@@ -37,6 +45,7 @@ a {
 }
 .header-logo img {
   width: 4.3vh;
+  height: auto;
 }
 .header-nav {
   float: right;
@@ -73,6 +82,7 @@ a {
 .full-hero {
   background-color: #c7dbfc;
   height: 50vh;
+  position: relative;
 }
 .full-hero:hover {
   background-color: #a7d6b4;
@@ -100,6 +110,8 @@ a {
   list-style: none;
   padding: 0;
   text-align: center;
+  bottom: 10px;
+  position: absolute;
 }
 .social-list > li {
   display: inline-block;
