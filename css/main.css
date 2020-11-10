@@ -4,7 +4,15 @@ html {
   padding: 0 30px;
 }
 body {
+  display: flex;
   font-family: helvetica, arial, sans;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-container {
+  flex-grow: 1;
+  padding-top: 10vh;
+  width: 100%;
 }
 h1 {
   font-size: 7vw;
@@ -31,6 +39,7 @@ a {
   background-color: #000;
   color: #fff;
   position: fixed;
+  /*flex-grow: 1;*/
   width: 100%;
   z-index: 20;
 }
@@ -89,9 +98,8 @@ a {
   background-color: #c7dbfc;
   box-sizing: border-box;
   background-size: cover;
-  height: 100vh;
-  padding-top: 10vh;
-  position: relative;
+  height: 90vh;
+  /*position: relative;*/
 }
 .full-hero:after{
   content: "";
@@ -176,18 +184,28 @@ a {
   text-align: center;
 }
 .home-callout {
+  align-items: center;
   background-color: #000;
   color: #fff;
+  display: flex;
   padding: 7vh 0;
 }
+.home-callout h3 {
+  color: inherit;
+  margin-top: 1em;
+}
 .callout-title {
+  flex-grow: 1;
+  flex-basis: 0;
   font-size: 5.75vw;
   text-align: right;
   text-transform: uppercase;
 }
 .callout-copy {
   font-size: 0.8rem;
-}
+  flex-basis: 45em;
+  flex-shrink: 0;
+  padding: 0 3vw;
 
 /* BIO STYLES */
 .bio-wrapper {
@@ -225,8 +243,9 @@ a {
 /*FOOTER STYLES*/
 .footer {
   background-color: black;
-  padding:10vh 0 15vh ;
+  padding:10vh 0 10vh ;
   text-align: center;
+  /*flex-grow: 1;*/
 }
 .footer img {
   width: 50px;
