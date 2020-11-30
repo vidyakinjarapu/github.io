@@ -10,7 +10,8 @@ body {
   min-height: 100vh;
 }
 .content-container {
-  flex-grow: 1;
+  display: flex;
+  flex: 1 1 auto;
   padding-top: 10vh;
   width: 100%;
 }
@@ -30,6 +31,7 @@ h2 ~ p {
 }
 p{
   line-height: 1.5em;
+  margin: 0.75vh 0;
 }
 a {
   color: #6397b5;
@@ -195,16 +197,14 @@ a {
   margin-top: 1em;
 }
 .callout-title {
-  flex-grow: 1;
-  flex-basis: 0;
+  flex: 1;
   font-size: 5.75vw;
   text-align: right;
   text-transform: uppercase;
 }
 .callout-copy {
+  flex: 0 0 45em;
   font-size: 0.8rem;
-  flex-basis: 45em;
-  flex-shrink: 0;
   padding: 0 3vw;
 }
 
@@ -244,7 +244,7 @@ a {
 /*FOOTER STYLES*/
 .footer {
   background-color: black;
-  padding:10vh 0 10vh ;
+  padding:5vh 0;
   text-align: center;
   /*flex-grow: 1;*/
 }
@@ -261,8 +261,30 @@ a {
 }
 .footer-nav li {
   display: inline-block;
-  margin: 2em 1em 0;
+  margin: 1em 1em 0;
 }
 .footer-nav a {
   color: #ccc;
+}
+
+/* COLUMN STYLES */
+.col-three {
+  display: flex;
+  flex: 1;
+}
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+  flex: 0 1 15em;
+}
+.col-three .col-content {
+  flex: 1;
+}
+.col-three .col-aside {
+  flex: 0 1 20em;
 }
