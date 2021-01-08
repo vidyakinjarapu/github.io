@@ -82,7 +82,13 @@ a {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   padding-left: 1em;
 }
-.nav-links a {
+
+.header-nav a,
+.drop-trigger {
+  color: #fff;
+}
+.nav-links a,
+.drop-trigger{
   color: #fff;
   font-size: 0.8rem;
   font-weight: bold;
@@ -149,6 +155,117 @@ a {
 .hero-content .social-link:hover {
   background-color: #000;
   color: #fff;
+}
+
+
+/* DROPDOWN STYLES */
+.dropdown {
+  position: relative;
+}
+.dropdown:hover .drop-menu {
+  display: block;
+}
+.dropdown:hover .drop-trigger:after {
+  border-color: #ed6e2f transparent transparent;
+}
+.drop-trigger {
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+}
+.drop-trigger:after {
+  border: 0.3em solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 0;
+}
+.drop-menu {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  display: none;
+  list-style: none;
+  padding: 1em 0 0;
+  position: absolute;
+  right: 0;
+  z-index: 9;
+}
+.drop-menu:before {
+  border: 0.3em solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 0;
+}
+.drop-menu li {
+  background-color: #fff;
+}
+.drop-menu li ~ li {
+  border-top: 1px dotted rgba(0,0,0,0.1)
+}
+.drop-menu li:first-child {
+  border-radius: 5px 5px 0 0;
+  color: #999;
+  font-size: 0.5em;
+  padding: 1em 1em 0.25em;
+  text-align: right;
+  text-transform: uppercase;
+}
+.drop-menu li:last-child {
+  border-radius: 0 0 5px 5px;
+}
+.drop-menu a {
+  color: #333;
+  display: block;
+  font-weight: normal;
+  padding: 0.5em 2em 0.5em 1em;
+  text-align: left;
+  text-transform: none;
+  white-space: nowrap;
+}
+.drop-menu a:hover {
+  background-color: rgba(0,0,0,0.2);
+  color: #444;
+}
+
+
+/*ADD TRIGGER STYLES IN FOOTER*/
+.footer .drop-trigger:after {
+  /* center the arrow horizonally with the text around it */
+  top: 0em;
+  /* reverse the direction of the arrow */
+  border-color: transparent transparent #fff;
+}
+.footer .dropdown:hover .drop-trigger:after {
+  /* reverse the direction of the arrow on hover */
+  border-color: transparent transparent #fff;
+}
+.footer .drop-menu {
+  /* temporarily add a background to make sure
+  hitboxes are flush */
+  /*background: red;*/
+  /* add padding on the bottom, as opposed to the top */
+  padding: 0 0 1em;
+  /* make the menu float above the BLOG li, not below it */
+  bottom: 1em;
+  /* make the menu float to the right of the BLOG li, not to the left */
+  right: auto;
+  position: absolute;
+}
+.footer .drop-menu:before {
+  /* make the menu arrow point down, not up as in the header */
+  border-color: #fff transparent transparent;
+  /* the menu arrow should hover on the left side */
+  left: 0.1em;
+  /* make the menu arrow float from the bottom, not the top */
+  top: auto;
+  /* make the menu arrow stick to the bottom of the footer drop-menu */
+  bottom: 0;
 }
 
 /* SOCIAL STYLES */
@@ -280,12 +397,16 @@ a {
 .footer h3 span {
   color: #aaa;
 }
-.footer-nav li {
+.footer-nav > li {
   display: inline-block;
-  margin: 1em 1em 0;
+  margin: 2em 1em 0;
 }
-.footer-nav a {
+.footer-nav > a {
   color: #ccc;
+}
+.social-links li{
+  display: inline-block;
+  margin: 2em 1em 0;
 }
 
 /* COLUMN STYLES */
@@ -360,6 +481,7 @@ a {
 .gallery-thumbs img:hover {
   width : 80%;
   opacity: 1;
+  box-shadow: 0 0 0 5px #ed6e2f;
 }
 .gallery-thumbs .current img {
   box-shadow: 0 0 0 5px #ed6e2f;
@@ -536,7 +658,11 @@ a {
   .gallery-thumbs img {
     height: 7vh;
     margin: 0 10px 0 0;
-    width: auto;
+    width: 10vw;
+  }
+  .gallery-thumbs img:hover {
+    box-shadow: 0 0 0 5px #ed6e2f;
+    width :10vw;
   }
   .gallery .gallery-info {
     flex: 1;
