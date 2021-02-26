@@ -486,10 +486,10 @@ a {
   margin: 0 0 10px;
   opacity: 0.5;
   transition: all 0.5s ease-in-out;
-  width: 100%;
+  width: 80%;
 }
 .gallery-thumbs img:hover {
-  width : 80%;
+  width : 100%;
   opacity: 1;
   box-shadow: 0 0 0 5px #ed6e2f;
 }
@@ -748,16 +748,3 @@ a {
     display: none;
   }
 }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
