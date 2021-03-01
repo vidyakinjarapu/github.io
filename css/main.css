@@ -743,6 +743,11 @@ a {
   }
   .gallery .gallery-info {
     flex: 1;
+    white-space: nowrap;
+  }
+  .gallery-info h3 {
+    overflow-wrap : no wrap;
+    color : red;
   }
 }
 
