@@ -507,7 +507,10 @@ a {
   width: 100%;
 }
 .gallery-info {
+  font-weight: bold;
   font-size: 0.8rem;
+  display: inline-block;
+  width: 20%;
 }
 .gallery-info h3 {
   margin-bottom: 1em;
